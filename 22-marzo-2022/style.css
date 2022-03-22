@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #263238;
+    background: #ECEFF1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+button  {
+    border: none;
+    height: 50px;
+    background: #2962FF;
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 5px; 
+}
+button:hover {
+    background: #144ff2;
+    color: #fff;
+}
+
+.container {
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    text-align: center;
+    padding: 50px;
+}
+
+.container h1 {
+    margin-bottom: 40px;
+}
+
