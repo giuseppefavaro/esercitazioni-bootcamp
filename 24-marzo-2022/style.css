@@ -1,0 +1,211 @@
+/*  Global */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #263238;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+}
+.container h1 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+
+
+
+/* Sezione Form ************************/
+
+.container__add {
+    padding: 20px;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;  
+    margin-bottom: 60px;
+}
+
+
+.formAdd {
+    display: flex;
+    flex-wrap: wrap;
+}
+.formAdd label {
+    display: block;
+    font-size: 13px;
+    padding-bottom: 5px;
+}
+.formAdd div {
+    padding: 20px;
+}
+
+
+.formAdd__input {
+    width: 33%;
+}
+@media (max-width: 767.98px) { 
+    .formAdd__input { width: 100%; }
+}
+
+
+
+.formAdd__textarea, .formAdd__btn {
+    width: 100%;
+}
+
+
+
+.formAdd__input input {
+    width: 100%;
+    display: block;
+    background: #ECEFF1;
+    min-height: 50px;
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+
+}
+
+.formAdd__textarea textarea {
+    width: 100%;
+    background: #ECEFF1;
+    min-height: 100px;
+    display: block;
+    border: none;
+    resize: none;
+    padding: 15px;
+    font-size: 14px;
+    font-family: inherit;
+
+}
+
+.formAdd__btn input {
+    border: none;
+    height: 50px;
+    width: 100%;
+    background: #2962FF;
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    padding: 10px 30px;  
+}
+
+.formAdd__btn input:hover {
+    background: #144ff2;
+    color: #fff;
+}
+
+
+
+
+
+/* Sezione Cards ************************/
+
+.container__cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 25%;
+    padding: 10px;
+}
+
+@media (max-width: 767.98px) { 
+    .card { width: 100%; }
+}
+
+
+
+.card__content { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+}
+
+
+
+.card__content img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.card__content h3 {
+    font-size: 18px;
+    line-height: 25px;
+    color: #0070f3;
+    padding: 10px 0;
+}
+.card__content .description {
+    font-size: 14px;
+    word-wrap: break-word;
+    padding-bottom: 10px;
+}
+.card__content .year { 
+    font-size: 13px;
+    font-weight: 700;
+    color: #546E7A;
+    padding-bottom: 10px;
+}
+
+
+.card__content .genres span {
+    display: inline-block;
+    padding: 3px 6px;
+    margin-right: 6px;
+    border-radius: 3px;
+    background: #ECEFF1;
+    color: #37474F;
+    font-size: 13px;
+    font-weight: 700;
+    color: #546E7A;
+}
+
+
+
+
+.card__content .removeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    background: #CFD8DC;
+    color: #90A4AE;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.card__content .removeBtn:hover {
+    background: #B0BEC5;
+    color: #37474F;
+} 
+
+
+
+.error404 {
+    text-align: center;
+    color: #DD2C00;
+}

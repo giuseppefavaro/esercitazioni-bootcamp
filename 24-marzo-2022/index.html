@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercitazione 24 marzo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="./script.js" type="module"></script>
+    <script src="./utils.js" type="module"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Elenco film</h1>
+        
+        <div class="container__add">
+
+            <h3>Aggiungi film</h3>
+
+            <form class="formAdd">
+
+                <div class="formAdd__input">
+                    <label for="title">Titolo:</label>
+                    <input type="text" id="title" name="title" placeholder="Inserisci il titolo">
+                </div>
+
+                <div class="formAdd__input">
+                    <label for="poster">Immagine:</label>
+                    <input type="text" id="poster" name="poster" placeholder="Inserisci url immagine">
+                </div>
+
+                <div class="formAdd__input">
+                    <label for="year">Anno:</label>
+                    <input type="text" id="year" name="year" placeholder="Inserisci anno">
+                </div>
+
+                <div class="formAdd__textarea">
+                    <label for="description">Descrizione:</label>
+                    <textarea name="testoForm" id="description" name="description" placeholder="Inserisci descrizione""></textarea>
+                </div>
+
+                <div class="formAdd__btn">
+                    <input type="submit" id="submit" value="Aggiungi">
+                </div>
+
+            </form>
+        </div>
+
+
+
+        <div class="container__cards">
+        </div>
+    </div>
+
+</body>
+</html>
