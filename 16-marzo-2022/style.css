@@ -38,7 +38,8 @@ button:hover {
     max-width: 990px;
     margin: 0 auto;
     padding: 50px ;
-    background: #ECEFF1;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     margin-bottom: 100px;
 }
 
@@ -61,21 +62,27 @@ button:hover {
 .container-flex input {
     width: 32%;
     padding: 10px;
-    background: #fafafa;
+    background: #f8f8f8;
     min-height: 50px;
     border: none;
     padding: 15px;
-   
+    font-size: 14px;
+    font-family: inherit;
 }
 .container-flex textarea {
     width: 98%;
     margin-top: 20px;
     padding: 10px;
+    background: #f8f8f8;
     border: none;
     min-height: 100px;
     resize: none;
+    font-size: 14px;
+    font-family: inherit;
 }
-
+.container-flex input:focus, .container-flex textarea:focus {
+    outline: none;
+}
 
 
 #comments {

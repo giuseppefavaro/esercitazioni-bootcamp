@@ -33,12 +33,14 @@ const quoteContainer = document.querySelector("#quote-container");
 const submitBtn = document.querySelector("#submit-btn");
 
 
-submitBtn.addEventListener("click", () => {
-
-  const random = Math.floor(Math.random() * 7);
-
+const render = () => {
+  const random = Math.floor(Math.random() * quotes.length);
   quoteContainer.innerHTML = quotes[random];
-})
+}
+
+submitBtn.addEventListener("click", render);
+
+render();
 
 
 
