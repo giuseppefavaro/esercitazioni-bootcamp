@@ -1,0 +1,254 @@
+/* GLOBAL ************************/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #263238;
+}
+
+.error404 {
+    text-align: center;
+    color: #DD2C00;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+}
+.container h1 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+
+
+
+/* SEZIONE FORM ************************/
+
+.container__add {
+    padding: 20px;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;  
+    margin-bottom: 60px;
+}
+
+
+.formAdd {
+    display: flex;
+    flex-wrap: wrap;
+}
+.formAdd label {
+    display: block;
+    font-size: 13px;
+    padding-bottom: 5px;
+}
+.formAdd div {
+    padding: 20px;
+}
+
+
+.formAdd__input {
+    width: 33%;
+}
+@media (max-width: 767px) { 
+    .formAdd__input { width: 100%; }
+}
+
+
+
+.formAdd__textarea, .formAdd__btn {
+    width: 100%;
+}
+
+
+
+.formAdd__input input {
+    width: 100%;
+    display: block;
+    background: #f8f8f8;
+    min-height: 50px;
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.formAdd__textarea textarea {
+    width: 100%;
+    background: #f8f8f8;
+    min-height: 100px;
+    display: block;
+    border: none;
+    resize: none;
+    padding: 15px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.formAdd__input input:focus, .formAdd__textarea textarea:focus {
+    outline: none;
+}
+
+.formAdd__btn input {
+    border: none;
+    height: 50px;
+    width: 100%;
+    background: #2962FF;
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    padding: 10px 30px;  
+}
+
+.formAdd__btn input:hover {
+    background: #144ff2;
+    color: #fff;
+}
+
+
+
+
+
+/* SEZIONE CARD ************************/
+
+.container__cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 25%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) { 
+    .card { width: 100%; }
+}
+
+
+
+.card__content { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+}
+
+.card__content img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.card__content h3 {
+    font-size: 18px;
+    line-height: 25px;
+    color: #0070f3;
+    padding: 10px 0;
+}
+.card__content .description {
+    font-size: 14px;
+    word-wrap: break-word;
+    padding-bottom: 10px;
+}
+.card__content .year { 
+    font-size: 13px;
+    font-weight: 700;
+    color: #546E7A;
+    padding-bottom: 10px;
+}
+
+
+.card__content .genres span {
+    display: inline-block;
+    padding: 3px 6px;
+    margin-right: 6px;
+    border-radius: 3px;
+    background: #ECEFF1;
+    color: #37474F;
+    font-size: 13px;
+    font-weight: 700;
+    color: #546E7A;
+}
+
+
+
+
+/* SEZIONE MODALE ************************/
+
+.overlay {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background: rgba(55, 71, 79, 0.8);
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalWrapper {
+    position: fixed;
+    z-index: 1;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    gap: 20px;
+
+    padding: 50px;
+    width: 50%;
+    background: linear-gradient(280deg, rgb(39, 39, 39) 0%, rgba(72,85,99,1) 78%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.modalWrapper__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.modalWrapper img {
+    width: 180px;
+    border-radius: 8px;
+}
+
+.modalWrapper .removeBtn {
+    border: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 5px 10px;
+    color: #fff;
+    background: #DD2C00;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 767px) { 
+    .modalWrapper { 
+        flex-direction: column;
+        width: 80%;
+     }
+     .modalWrapper img {
+        margin: 0 auto;
+    }
+}
