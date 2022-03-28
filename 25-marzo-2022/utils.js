@@ -8,6 +8,7 @@ const createCard = (title, imgUrl, description, year, genres) => {
     const cardYear = document.createElement("p");
     const cardGenres = document.createElement('p');
 
+
    if (Array.isArray(genres)) {
        genres.forEach((genre) =>  cardGenres.innerHTML = `<span>${genre}</span>`)
     } else {
@@ -26,13 +27,43 @@ const createCard = (title, imgUrl, description, year, genres) => {
     cardDescription.textContent = description;
     cardYear.textContent = year;
 
-
-    card.appendChild(cardContent);
     cardContent.append(cardImg,cardTitle,cardDescription,cardYear,cardGenres);
+    card.appendChild(cardContent);
 
     document.querySelector(".container__cards").appendChild(card);
 
 }
+
+
+const createModal = (title, imgUrl, description) => {
+
+    const overlay = document.createElement("div");
+    const modalWrapper = document.createElement("div");
+    const modalImg = document.createElement("img");
+    const modalWrapperContent = document.createElement("div");
+
+    const modalH1 = document.createElement("h1");
+    const modalDesc = document.createElement("p");
+    const removeBtn = document.createElement("button");
+    
+    overlay.setAttribute("class", "overlay");
+    modalWrapper.setAttribute("class", "modalWrapper");
+    modalWrapperContent.setAttribute("class", "modalWrapper__content");
+    removeBtn.setAttribute("class", "removeBtn");        
+
+    modalImg.setAttribute("src", imgUrl);
+    modalImg.setAttribute("alt", title);
+
+    modalH1.textContent = title;
+    modalDesc.textContent = maxLengthText(description);
+    removeBtn.textContent = "Rimuovi dal database";
+
+    modalWrapperContent.append(modalH1,modalDesc);
+    modalWrapper.append(modalImg,modalWrapperContent,removeBtn);
+    document.body.append(modalWrapper,overlay);
+
+}
+
 
 
 
@@ -40,5 +71,5 @@ const maxLengthText = (text) => text.split(" ").slice(0, 6).join(" ") + " ...";
 
 
 
-export {createCard, maxLengthText}
+export {createCard, createModal, maxLengthText}
 // export default {createCard, maxLengthText}; 

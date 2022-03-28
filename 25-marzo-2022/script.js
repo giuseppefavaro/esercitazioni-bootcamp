@@ -1,7 +1,13 @@
-import {createCard, maxLengthText} from "./utils.js"
+import {createCard, createModal, maxLengthText} from "./utils.js"
 
 
-// Recupero dati in modo asincrono ========================
+// Inizializzo nello scope globale un array vuoto che conterrà "resultAPI", in modo da poter accedere ai suoi dati al secondo then
+
+let resultAPIGlobal = [];
+
+
+
+// Recupero i dati in modo asincrono con async / await
 
 const getMoviesAPI = async () => {
 
@@ -29,7 +35,9 @@ const getMoviesAPI = async () => {
 
 getMoviesAPI().then( (resultAPI) => {
 
-  // console.log(resultAPI)
+    // console.log(resultAPI)
+
+    resultAPIGlobal = resultAPI;
 
     resultAPI.map( (movie) => {
 
@@ -38,74 +46,51 @@ getMoviesAPI().then( (resultAPI) => {
     });
 
 
+} ).then(() => {
 
-   
-    const cards = document.querySelectorAll(".card");
-    cards.forEach((card, index) => {
+  // console.log(resultAPIGlobal);
 
-      // Al click sulla singola card creo la modale
+  const cards = document.querySelectorAll(".card");
 
-      card.addEventListener("click", () => {
+  cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
 
-        const overlay = document.createElement("div");
-        const modalWrapper = document.createElement("div");
-        const modalImg = document.createElement("img");
-        const modalWrapperContent = document.createElement("div");
-        
-        const modalH1 = document.createElement("h1");
-        const modalDesc = document.createElement("p");
-        const removeBtn = document.createElement("button");
-         
-        overlay.setAttribute("class", "overlay");
-        modalWrapper.setAttribute("class", "modalWrapper");
-        modalWrapperContent.setAttribute("class", "modalWrapper__content");
-        removeBtn.setAttribute("class", "removeBtn");        
-        
-        modalImg.setAttribute("src", resultAPI[index].poster);
-        modalImg.setAttribute("alt", resultAPI[index].title);
+      // Creazione modale al click sulla card
 
-        modalH1.textContent = resultAPI[index].title;
-        modalDesc.textContent = maxLengthText(resultAPI[index].description);
-        removeBtn.textContent = "Rimuovi dal database"
+      createModal(resultAPIGlobal[index].title, resultAPIGlobal[index].poster, resultAPIGlobal[index].description);
 
-        document.body.appendChild(overlay);
-        document.body.appendChild(modalWrapper);
-        modalWrapper.append(modalImg,modalWrapperContent,removeBtn)
-        modalWrapperContent.append(modalH1,modalDesc);
 
-        // Al click sullo sfondo chiudo la modale
+      // Rimozione modale al click sullo sfondo
 
-        document.querySelector(".overlay").addEventListener("click", () => {
+      document.querySelector(".overlay").addEventListener("click", () => {
         document.querySelector(".overlay").remove();
         document.querySelector(".modalWrapper").remove();
-        });
+      });
+  
+      // DELETE request al click sul button
 
-        // Al click sul button effettuo una delete
-
-        document.querySelector(".removeBtn").addEventListener("click", () => {
-
-            fetch(`https://edgemony-backend.herokuapp.com/movies/${resultAPI[index].id}`, {
-              method: "DELETE",
-              headers: {
-                'Content-Type': "application/json"
-              }
-            }).then((data) => {
-              location.reload()
-            })
-
-        });
-
- 
+      document.querySelector(".removeBtn").addEventListener("click", () => {
+        fetch(`https://edgemony-backend.herokuapp.com/movies/${resultAPIGlobal[index].id}`, {
+          method: "DELETE",
+          headers: {
+            'Content-Type': "application/json"
+          }
+        }).then((data) => {
+          location.reload()
+        })
       });
 
     })
 
-} )
+  })
+
+  
+}); 
 
 
 
 
-// Form aggiungi  ========================================
+// Form aggiungi
 
 const titleInput = document.querySelector("#title");
 const descriptionInput = document.querySelector("#description");
@@ -124,7 +109,7 @@ submitInput.addEventListener("click", (event) => {
       },
       body: JSON.stringify({
         description: descriptionInput.value,
-        genres: ["commedia"],
+        genres: ["azione"],
         poster: posterInput.value,
         title: titleInput.value,
         year: yearInput.value,
