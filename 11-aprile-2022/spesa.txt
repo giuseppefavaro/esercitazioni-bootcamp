@@ -1,0 +1,2 @@
+Prodotto: orange: | Quantità: 2 
+Prodotto: apple: | Quantità: 4 
