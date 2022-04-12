@@ -1,2 +1,5 @@
-Prodotto: orange: | Quantità: 2 
-Prodotto: apple: | Quantità: 4 
+Prodotto: kiwi: | Quantità: 4 
+Prodotto: kiwi: | Quantità: 4 
+Prodotto: apple: | Quantità: 3 
+Prodotto: orange: | Quantità: 9 
+Prodotto: kiwi: | Quantità: 11 
