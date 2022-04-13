@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import { Description } from './components/Description';
 
 import { Header } from './components/Header';
 
@@ -9,6 +10,8 @@ function App() {
     <div className="page">
 
       <Header> </Header>
+
+      <Description></Description>
 
     </div>
 
