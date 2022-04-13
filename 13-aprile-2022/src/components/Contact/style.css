@@ -1,0 +1,39 @@
+.contact {
+    padding: 30px;
+    text-align: center;
+}
+
+
+.contact form {
+   
+    width: 400px;
+    margin: 0 auto;
+}
+
+.contact label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact input {
+    width: 100%;
+    display: block;
+    outline: none;
+    background: #FAFAFA;
+    border-radius: 5px;
+    padding: 15px;
+    border: none; 
+}
+
+.contact textarea {
+    width: 100%;
+    display: block;
+    outline: none;
+    appearance: none;
+    background: #FAFAFA;
+    min-height: 100px;
+    border-radius: 5px;
+    padding: 15px;
+    border: none;      
+    resize: none;   
+}

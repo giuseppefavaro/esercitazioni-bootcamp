@@ -1,8 +1,10 @@
 // import logo from './logo.svg';
 import './App.css';
-import { Description } from './components/Description';
 
+import { Description } from './components/Description';
 import { Header } from './components/Header';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -11,7 +13,11 @@ function App() {
 
       <Header> </Header>
 
-      <Description></Description>
+      <Description> </Description>
+
+      <Contact> </Contact>
+
+      <Footer> </Footer>
 
     </div>
 
