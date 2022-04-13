@@ -1,14 +1,16 @@
 .contact {
     padding: 30px;
+}
+
+
+.contact h3 {
     text-align: center;
+    font-size: 25px;
+    border-bottom: 2px solid #ECEFF1;
+    padding-bottom: 10px;
 }
 
 
-.contact form {
-   
-    width: 400px;
-    margin: 0 auto;
-}
 
 .contact label {
     display: block;

@@ -4,7 +4,7 @@ import "./style.css";
 export const Contact = () => {
     return (
         <div className="contact">
-            <h2>Contatti</h2>
+            <h3>Contatti</h3>
             <form>
                 <label for="oggetto">Oggetto: </label>
                 <input type="text" name="oggetto" id="oggetto" />
