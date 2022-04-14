@@ -4,10 +4,20 @@
   margin: 0;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #ECEFF1;
+  
+}
+
 
 
 .ProductList__container {
   max-width: 1200px;
   margin: 0 auto;
-  border: 10px solid red;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 1%;
+  flex-wrap: wrap;
 }

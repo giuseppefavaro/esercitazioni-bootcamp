@@ -7,10 +7,7 @@ import {BookCard} from "./components/BookCard";
 
 
 
-
 function App() {
-
-  
 
   return (
     <div className="ProductList__container">
@@ -19,7 +16,7 @@ function App() {
 
           <BookCard 
             key={item.id}
-            title={item.title}
+            title={item.name}
             description={item.description}
             img={item.img}>
           </BookCard>
